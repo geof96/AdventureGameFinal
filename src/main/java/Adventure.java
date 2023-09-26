@@ -9,9 +9,9 @@ public class Adventure {
         Room newRoom = findRoom(direction);
         if (newRoom != null){
             current = newRoom;
-            // sout(current.getName + current.getDescription)
+            System.out.println(current.getName() + current.getDescription());
         } else {
-            // print you cannot do this
+            System.out.println("You can't walk this way! Take another route.");
         }
     }
 

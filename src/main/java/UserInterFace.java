@@ -6,15 +6,16 @@ public class UserInterFace {
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
     String waitCommand = "Waiting for your command";
+    String welcomeMessage = "Welcome To Cave of Randomness. In this game you have to find your way to the Infinity Gauntlet.\nYou start from the cave entrance and type either |go north|, |north| or |n|. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nEnjoy the game!\n";
     String choice;
 
     public void startAdventure() {
         adventure.buildRoom();
-
+        System.out.println(welcomeMessage + waitCommand);
 
         do {
             Room current = adventure.getCurrent();
-            System.out.println(waitCommand);
+
             choice = command.nextLine();
 
             switch (choice) {
