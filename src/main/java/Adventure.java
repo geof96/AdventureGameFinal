@@ -3,15 +3,15 @@ public class Adventure {
     public Room current;
 
     public void buildRoom() {
-        Room room1 = new Room("Room1", "You are entering the cave of eternal pain and suffering. There a different rooms to explore. There are pathways towards east and south. ");
-        Room room2 = new Room("Room 2", "You have entered into a dark and abandoned dungeon.");
-        Room room3 = new Room("Room 3", " you are in room 3");
-        Room room4 = new Room("Room 4", "you are in room 4 ");
-        Room room5 = new Room("Room 5", " you are in room 5");
-        Room room6 = new Room("Room 6", " you are in room 6");
-        Room room7 = new Room("Room 7", " you are in room 7");
-        Room room8 = new Room("Room 8", " you are in room 8");
-        Room room9 = new Room("Room 9", " you are in room 9");
+        Room room1 = new Room("Entrance of Time Travel: " , "You step into a time machine and find yourself in ancient Rome during a grand gladiator tournament. The coliseum roars with excitement. Paths lead east and south.");
+        Room room2 = new Room("Gladiator's Arena: ", "You are now in the heart of the gladiator arena. Gladiators clash swords while the crowd cheers. You find an ancient sword and a water flask.");
+        Room room3 = new Room("Renaissance Courtyard: ", "You've traveled to the Renaissance era. Da Vinci's artworks adorn the walls. A table holds a bottle of fine wine and a flask of coffee.");
+        Room room4 = new Room("Egyptian Treasure Chamber: ", "You're in ancient Egypt, inside a treasure chamber filled with priceless artifacts. A mummy case stands against one wall.");
+        Room room5 = new Room("World Cup Final 2023: ", "You've arrived at the 2023 World Cup final match. The stadium roars as Messi scores a goal. You see the fabled Infinity Gauntlet.");
+        Room room6 = new Room("Renaissance Art Studio: ", "In this Renaissance-era art studio, you find vibrant paintings and sculptures. There's a palette and a brush on a worktable.");
+        Room room7 = new Room("1920s Speakeasy: ", " You're in a 1920s speakeasy during the Prohibition era. Jazz music fills the air. You spot a violin and a bottle of bootleg whiskey.");
+        Room room8 = new Room("Rock 'n' Roll Stage: ", " You're on the stage of a rock 'n' roll concert from the 1960s. The crowd goes wild. You find an electric guitar and a harmonica.");
+        Room room9 = new Room("Library of Alexandria: ", " You've traveled back to ancient Alexandria, home to the great library. There are scrolls and books of wisdom. A pair of reading glasses sits on a table.");
 
 
         // peg på starter room
