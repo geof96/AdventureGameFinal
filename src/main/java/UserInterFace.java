@@ -24,10 +24,10 @@ public class UserInterFace {
                 case "go east", "east", "GO EAST", "EAST", "E", "e" -> adventure.walk("East");
                 case "go west", "west", "GO WEST", "WEST", "W", "w" -> adventure.walk("West");
                 case "look", "l", "L" -> System.out.println(current.getDescription());
-                case "help", "h", "H" -> System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the describtion of the room");
-                case "exit" -> {System.out.println("Thanks for playing");
+                case "help", "h", "H" -> System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the description of the room ");
+                case "exit" -> {System.out.println("Thanks for playing! ");
                 isRunning = false;}
-                default -> System.out.println("Invalid input!");
+                default -> System.out.println("Invalid input! ");
 
             }
         }
