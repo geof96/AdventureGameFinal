@@ -6,8 +6,8 @@ public class UserInterFace {
     String waitCommand = "Waiting for you command";
 
     public String direction(){
-        if(command = ('n', "North" , "go north")){
-            System.out.println("Go north");
 
+        return "TO DO";
     }
-}}
+
+}
