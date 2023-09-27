@@ -5,6 +5,6 @@ public class Main {
         UserInterFace ui = new UserInterFace();
         ui.startAdventure();
 
-        }
     }
+}
 

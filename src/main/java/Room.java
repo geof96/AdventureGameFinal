@@ -15,6 +15,7 @@ public class Room {
             this.east = null;
             this.west = null;
 
+
     }
 
     public Room getNorth() {
@@ -64,5 +65,7 @@ public class Room {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }
 
