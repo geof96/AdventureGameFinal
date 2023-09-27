@@ -2,6 +2,7 @@ public class Adventure {
 
     public Room current;
 
+    //This is the map
     public void buildRoom() {
         Room room1 = new Room("Entrance of Time Travel: " , "You step into a time machine and find yourself in ancient Rome during a grand gladiator tournament. The coliseum roars with excitement. Paths lead east and south.");
         Room room2 = new Room("Gladiator's Arena: ", "You are now in the heart of the gladiator arena. Gladiators clash swords while the crowd cheers. You find an ancient sword and a water flask.");
@@ -73,6 +74,8 @@ public class Adventure {
 
 
     }
+
+    //Navigation
     public void walk(String direction){
         Room newRoom = findRoom(direction);
         if (newRoom != null){
@@ -88,6 +91,7 @@ public class Adventure {
         return current;
     }
 
+    //Finds current room
     public Room findRoom(String direction) {
         switch (direction) {
             case "North" -> {
