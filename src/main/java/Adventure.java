@@ -24,7 +24,7 @@ public class Adventure {
         room1.setNorth(null);
         room1.setWest(null);
 
-        //Room2 directions
+        //Room2
         room2.setEast(room3);
         room2.setSouth(room5);
         room2.setNorth(null);
@@ -65,12 +65,12 @@ public class Adventure {
         room8.setSouth(null);
         room8.setNorth(room5);
         room8.setWest(room7);
+
         //Room9
         room9.setEast(null);
         room9.setSouth(null);
         room9.setNorth(room6);
         room9.setWest(room8);
-
 
 
     }
