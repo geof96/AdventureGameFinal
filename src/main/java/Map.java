@@ -26,7 +26,7 @@ public class Map {
 
         //Room2 directions
         room2.setEast(room3);
-        room2.setSouth(room5);
+        room2.setSouth(null);
         room2.setNorth(null);
         room2.setWest(room1);
 
@@ -37,7 +37,7 @@ public class Map {
         room3.setWest(room2);
 
         //Room4
-        room4.setEast(room5);
+        room4.setEast(null);
         room4.setSouth(room7);
         room4.setNorth(room1);
         room4.setWest(null);
@@ -52,7 +52,7 @@ public class Map {
         room6.setEast(null);
         room6.setSouth(room9);
         room6.setNorth(room3);
-        room6.setWest(room5);
+        room6.setWest(null);
 
         //Room7
         room7.setEast(room8);

@@ -8,7 +8,7 @@ public class UserInterFace {
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
     String waitCommand = "Waiting for your command";
-    String welcomeMessage = "Welcome To Cave of Time Travel. In this game you have to find your way to the Infinity Gauntlet.\nYou start from the cave entrance and type either |go north|, |north| or |n|. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nEnjoy the game!\n";
+    String welcomeMessage = "Welcome To Cave of Time Travel. In this game you have to find your way to the Infinity Gauntlet.\nYou start from the cave entrance and type either |go south|, |south| or |s|. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nEnjoy the game!\n";
     String choice;
 
     public void startAdventure() {
@@ -22,8 +22,6 @@ public class UserInterFace {
         System.out.println(welcomeMessage + waitCommand);
 
         do {
-            Room current = adventure.getCurrent();
-
             choice = command.nextLine();
 
             switch (choice) {
