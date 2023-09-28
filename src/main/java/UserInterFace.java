@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class UserInterFace {
-    private Adventure adventure = new Adventure();
+    public Map drawMap = new Map();
+    Adventure adventure = new Adventure(drawMap);
 
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
@@ -10,7 +11,10 @@ public class UserInterFace {
     String choice;
 
     public void startAdventure() {
-        adventure.buildRoom();
+        //Drawing map, before game start.
+        drawMap.map();
+
+
         System.out.println(welcomeMessage + waitCommand);
 
         do {
@@ -23,7 +27,7 @@ public class UserInterFace {
                 case "go south", "south", "GO SOUTH", "SOUTH", "S", "s" -> adventure.walk("South");
                 case "go east", "east", "GO EAST", "EAST", "E", "e" -> adventure.walk("East");
                 case "go west", "west", "GO WEST", "WEST", "W", "w" -> adventure.walk("West");
-                case "look", "l", "L" -> System.out.println(current.getDescription());
+                case "look", "l", "L" -> System.out.println(adventure.getCurrent().getDescription());
                 case "help", "h", "H" ->
                         System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the describtion of the room");
                 case "exit" -> {
