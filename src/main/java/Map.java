@@ -73,6 +73,10 @@ public class Map {
 
         current = room1;
 
-    }
+        room4.allocateItem("coins");
+        room2.allocateItem("Ancient gladiator sword");
 
+
+
+    }
 }

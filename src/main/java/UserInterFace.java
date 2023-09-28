@@ -30,6 +30,7 @@ public class UserInterFace {
                 case "go east", "east", "GO EAST", "EAST", "E", "e" -> player.walk("East");
                 case "go west", "west", "GO WEST", "WEST", "W", "w" -> player.walk("West");
                 case "look", "l", "L" -> System.out.println(player.getCurrent().getDescription());
+                case "inventory", "INVENTORY", "i", "I", "inven", "INVEN" -> System.out.println(player.getInventory());
                 case "help", "h", "H" ->
                         System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the describtion of the room");
                 case "exit" -> {

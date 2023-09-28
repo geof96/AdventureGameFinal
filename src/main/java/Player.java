@@ -1,6 +1,26 @@
-public class Player {
+import java.util.ArrayList;
 
+public class Player {
+    Item item;
     public Room current;
+
+
+    public ArrayList<Item> inventory = new ArrayList<>();
+
+    public void addToInventory(Player player){
+        inventory.add();
+    }
+
+    public ArrayList<Item> getInventory(){
+        return inventory;
+    }
+
+    public Item searchItem(String itemName){
+        for (Item item : inventory){
+            return item;
+        }
+        return null;
+    }
 
     public Room getCurrent() {
         return current;

@@ -68,5 +68,19 @@ public class Room {
     }
 
     public ArrayList<Item> items = new ArrayList<>();
+
+
+
+    public void addItem(Item item){
+        items.add(item);
+    }
+
+    public void allocateItem(String itemName){
+        items.add(new Item(itemName));
+    }
+
+
+
+
 }
 
