@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class UserInterFace {
     public Map drawMap = new Map();
-    Adventure adventure = new Adventure(drawMap);
+    public Player player = new Player();
+    Adventure adventure;
 
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
@@ -11,9 +12,12 @@ public class UserInterFace {
     String choice;
 
     public void startAdventure() {
+        adventure = new Adventure(drawMap, player);
+
+        player.setCurrent(adventure.getCurrent());
+
         //Drawing map, before game start.
         drawMap.map();
-
 
         System.out.println(welcomeMessage + waitCommand);
 
@@ -23,11 +27,11 @@ public class UserInterFace {
             choice = command.nextLine();
 
             switch (choice) {
-                case "go north", "north", "GO NORTH", "NORTH", "N", "n" -> adventure.walk("North");
-                case "go south", "south", "GO SOUTH", "SOUTH", "S", "s" -> adventure.walk("South");
-                case "go east", "east", "GO EAST", "EAST", "E", "e" -> adventure.walk("East");
-                case "go west", "west", "GO WEST", "WEST", "W", "w" -> adventure.walk("West");
-                case "look", "l", "L" -> System.out.println(adventure.getCurrent().getDescription());
+                case "go north", "north", "GO NORTH", "NORTH", "N", "n" -> player.walk("North");
+                case "go south", "south", "GO SOUTH", "SOUTH", "S", "s" -> player.walk("South");
+                case "go east", "east", "GO EAST", "EAST", "E", "e" -> player.walk("East");
+                case "go west", "west", "GO WEST", "WEST", "W", "w" -> player.walk("West");
+                case "look", "l", "L" -> System.out.println(player.getCurrent().getDescription());
                 case "help", "h", "H" ->
                         System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the describtion of the room");
                 case "exit" -> {
