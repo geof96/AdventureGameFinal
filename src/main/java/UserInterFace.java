@@ -31,7 +31,7 @@ public class UserInterFace {
                     default -> System.out.println("Unknown command");
                 }
 
-            } else if (commands.length == 2) {
+            } else if (commands.length >= 2) {
                 switch (commands[0]) {
                     case "go" -> {
                         String direction = commands[1];
@@ -47,8 +47,9 @@ public class UserInterFace {
                     }
                     case "d", "D", "drop", "Drop" -> {
                         String itemName = commands[1];
-                        System.out.println("You've dropped " + itemName + " from your inventory.");
                         adventure.dropFromInventory(itemName);
+                        System.out.println("You've dropped " + itemName + " from your inventory.");
+
                     }
                 }
             } else {

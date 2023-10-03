@@ -32,18 +32,27 @@ public class Player {
     }
 
     public boolean dropItem(String itemName) {
-        boolean isNull = false;
-        Item item = currentRoom.findItem(itemName);
-        if (item != null) {
-            getCurrentRoom().addItem(item);
-            getInventory().remove(item);
+        Item itemToRemove = null;
 
-            isNull = true;
+        for (Item item : inventory) {
+            if (item.getItemName().equalsIgnoreCase(itemName)) {
+                itemToRemove = item;
+                break;
+            }
         }
-        return isNull;
 
+        if (itemToRemove != null) {
+            inventory.remove(itemToRemove);
+            currentRoom.addItem(itemToRemove);
 
+            return true;
+        }
+
+        return false;
     }
+
+
+
     public Room getCurrentRoom() {
         return currentRoom;
     }

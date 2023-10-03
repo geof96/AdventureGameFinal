@@ -15,9 +15,9 @@ public class Map {
         Room room7 = new Room("1920s Speakeasy: ", " You're in a 1920s speakeasy during the Prohibition era. Jazz music fills the air. You spot a violin and a bottle of bootleg whiskey.");
         Room room8 = new Room("Rock 'n' Roll Stage: ", " You're on the stage of a rock 'n' roll concert from the 1960s. The crowd goes wild. You find an electric guitar and a harmonica.");
         Room room9 = new Room("Library of Alexandria: ", " You've traveled back to ancient Alexandria, home to the great library. There are scrolls and books of wisdom. A pair of reading glasses sits on a table.");
-        Room room10 = new Room();
-        Room room11 = new Room();
-        Room room12 =  new Room();
+        //Room room10 = new Room();
+        //Room room11 = new Room();
+        //Room room12 =  new Room();
 
         //Room1 directions
         room1.setEast(room2);
@@ -60,13 +60,16 @@ public class Map {
         room9.setNorth(room6);
         room9.setWest(room8);
 
-        currentRoom = room1;
-
+        //Items in specified room
         room4.allocateItem("coins");
         room2.allocateItem("sword");
-        room5.allocateItem("Infinity Gauntlet");
-        room7.allocateItem();
-        room8.allocateItem("Kar98K");
+        room5.allocateItem("Gauntlet");
+        room8.allocateItem("Sniper");
+
+
+        currentRoom = room1;
+
+
 
     }
 
