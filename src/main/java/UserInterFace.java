@@ -1,44 +1,58 @@
 import java.util.Scanner;
 
 public class UserInterFace {
-    public Map drawMap = new Map();
-    public Player player = new Player();
-    Adventure adventure;
 
+    Adventure adventure = new Adventure();
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
     String waitCommand = "Waiting for your command";
     String welcomeMessage = "Welcome To Cave of Time Travel. In this game you have to find your way to the Infinity Gauntlet.\nYou start from the cave entrance and type either |go south|, |south| or |s|. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nEnjoy the game!\n";
-    String choice;
+
 
     public void startAdventure() {
-        adventure = new Adventure(drawMap, player);
-
-        player.setCurrent(adventure.getCurrent());
-
-        //Drawing map, before game start.
-        drawMap.map();
-
         System.out.println(welcomeMessage + waitCommand);
-
+        String choice;
         do {
-            choice = command.nextLine();
+            System.out.print(">");
+            choice = command.nextLine().trim();
+            String[] commands = choice.split("\\s+");
 
-            switch (choice) {
-                case "go north", "north", "GO NORTH", "NORTH", "N", "n" -> player.walk("North");
-                case "go south", "south", "GO SOUTH", "SOUTH", "S", "s" -> player.walk("South");
-                case "go east", "east", "GO EAST", "EAST", "E", "e" -> player.walk("East");
-                case "go west", "west", "GO WEST", "WEST", "W", "w" -> player.walk("West");
-                case "look", "l", "L" -> System.out.println(player.getCurrent().getDescription());
-                case "inventory", "INVENTORY", "i", "I", "inven", "INVEN" -> System.out.println(player.getInventory());
-                case "help", "h", "H" ->
-                        System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the describtion of the room");
-                case "exit" -> {
-                    System.out.println("Thanks for playing");
-                    isRunning = false;
+            if (commands.length == 1) {
+                switch (commands[0]) {
+                    case "look", "l", "L" -> System.out.println(adventure.surroundings());
+                    case "inventory", "INVENTORY", "i", "I", "inven", "INVEN" ->
+                            System.out.println(adventure.seeInventory());
+                    case "help", "h", "H" ->
+                            System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the description of the room");
+                    case "exit" -> {
+                        System.out.println("Thanks for playing");
+                        isRunning = false;
+                    }
+                    default -> System.out.println("Unknown command");
                 }
-                default -> System.out.println("Invalid input!");
 
+            } else if (commands.length == 2) {
+                switch (commands[0]) {
+                    case "go" -> {
+                        String direction = commands[1];
+                        System.out.println("go " + direction);
+                        adventure.go(direction);
+
+                    }
+                    case "take", "Take", "t", "T" -> {
+                        String itemName = commands[1];
+                        System.out.println("You've added " + itemName + " to your inventory.");
+                        adventure.takeAllocatedItem(itemName);
+
+                    }
+                    case "d", "D", "drop", "Drop" -> {
+                        String itemName = commands[1];
+                        System.out.println("You've dropped " + itemName + " from your inventory.");
+                        adventure.dropFromInventory(itemName);
+                    }
+                }
+            } else {
+                System.out.println("Unknown command");
             }
         }
         while (isRunning);
