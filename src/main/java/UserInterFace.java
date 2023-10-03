@@ -5,7 +5,7 @@ public class UserInterFace {
     Adventure adventure = new Adventure();
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
-    String waitCommand = "Waiting for your command";
+    String waitCommand = "Waiting for your command...";
     String welcomeMessage = "Welcome To Cave of Time Travel. In this game you have to find your way to the Infinity Gauntlet.\nYou start from the cave entrance and type either |go south|, |south| or |s|. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nEnjoy the game!\n";
 
 
@@ -23,9 +23,9 @@ public class UserInterFace {
                     case "inventory", "INVENTORY", "i", "I", "inven", "INVEN" ->
                             System.out.println(adventure.seeInventory());
                     case "help", "h", "H" ->
-                            System.out.println("Type either west, east, north or south to navigate. Press l or type look to get the description of the room");
+                            System.out.println("Type either west, east, north or south to navigate. Type l or look to get the description of the room");
                     case "exit" -> {
-                        System.out.println("Thanks for playing");
+                        System.out.println("Thanks for playing!");
                         isRunning = false;
                     }
                     default -> System.out.println("Unknown command");
