@@ -1,7 +1,8 @@
 public class Item {
 
 
-    private String itemName;
+    private final String itemName;
+
     public Item(String itemName) {
         this.itemName = itemName;
     }
@@ -11,15 +12,10 @@ public class Item {
         return itemName;
     }
 
-    public String toString(){
-        return itemName;
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemName='" + itemName + '\'' +
+                '}';
     }
-
-
-    
-
-
-
-
-
 }

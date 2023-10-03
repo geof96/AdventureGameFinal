@@ -1,21 +1,42 @@
-public class Adventure {
+import java.util.ArrayList;
 
-    public Room current;
-    private Map drawMap;
-    public Player player;
+public class Adventure {
+    private Map map;
+    private Player player;
 
     //Calling the method in adventure.
-    public Adventure(Map map, Player player) {
-        this.drawMap = map;
-        current = drawMap.room1;
+    public Adventure() {
+        player = new Player();
+        map = new Map();
+        map.buildMap();
+        player.setCurrentRoom(map.getCurrentRoom());
     }
 
-    public Adventure(Player player) {
-        this.player = player;
+    public void go(String direction) {
+
+        player.walk(direction);
+    }
+
+
+    public String surroundings() {
+
+        player.currentRoom.getDescription();
+        return player.currentRoom.getDescription() + player.currentRoom.getItems();
+    }
+
+    public void takeAllocatedItem(String itemName) {
+        player.takeItem(itemName);
+    }
+
+    public ArrayList<Item> seeInventory() {
+        System.out.println("These are your items: ");
+        player.getInventory();
+        return player.getInventory();
 
     }
 
-    public Room getCurrent() {
-        return current;
+    public void dropFromInventory(String itemName) {
+        player.dropItem(itemName);
     }
 }
+

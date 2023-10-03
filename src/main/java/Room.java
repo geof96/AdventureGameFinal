@@ -7,15 +7,16 @@ public class Room {
     private Room west;
     private String name;
     private String description;
+    private ArrayList<Item> items = new ArrayList<>();
 
 
     public Room(String name, String description) {
-            this.name = name;
-            this.description = description;
-            this.north = null;
-            this.south = null;
-            this.east = null;
-            this.west = null;
+        this.name = name;
+        this.description = description;
+        this.north = null;
+        this.south = null;
+        this.east = null;
+        this.west = null;
 
     }
 
@@ -63,23 +64,34 @@ public class Room {
         return description;
     }
 
-    public void setDescription(String description) {
+    /*public void setDescription(String description) {
         this.description = description;
+    }*/
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
-    public ArrayList<Item> items = new ArrayList<>();
-
-
-
-    public void addItem(Item item){
+    public void addItem(Item item) {
         items.add(item);
     }
 
-    public void allocateItem(String itemName){
+    public void allocateItem(String itemName) {
         items.add(new Item(itemName));
     }
 
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
 
+    public Item findItem(String itemName) {
+        for (Item item : items) {
+            if (item.getItemName().equals(itemName)) {
+                return item;
+            }
+        }
+        return null;
+    }
 
 
 }
