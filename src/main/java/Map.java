@@ -17,7 +17,7 @@ public class Map {
         Room room9 = new Room("Library of Alexandria: ", " You've traveled back to ancient Alexandria, home to the great library. There are scrolls and books of wisdom. A pair of reading glasses sits on a table.");
         Room room10 = new Room();
         Room room11 = new Room();
-        Room room12 =  new Room();
+        Room room12 = new Room();
 
         //Room1 directions
         room1.setEast(room2);
