@@ -50,6 +50,8 @@ public class Player {
             };
             healthPoints += ((Food) item).getHealth();
             isNull = true;
+        }else {
+            System.out.println("You can't eat this");
         }
         return isNull;
     }
