@@ -63,8 +63,16 @@ public class Map {
         //Items in specified room
         room4.allocateItem("coins");
         room2.allocateItem("sword");
-        room5.allocateItem("Gauntlet");
-        room8.allocateItem("Sniper");
+        room5.allocateItem("gauntlet");
+        room8.allocateItem("sniper");
+
+
+        //Food in specified room
+        room3.allocateFood("redbull", 40);
+        room7.allocateFood("banan", 60);
+        room4.allocateFood("ris", 60);
+        room1.allocateFood("hilib", 10);
+        room9.allocateFood("cashewnut", 5);
 
 
         currentRoom = room1;

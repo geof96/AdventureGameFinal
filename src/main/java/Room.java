@@ -94,5 +94,12 @@ public class Room {
     }
 
 
+    //Methods for allocating food:
+    public void allocateFood(String foodName, int healthPoints) {
+        items.add(new Food(foodName, healthPoints));
+    }
+
+
+
 }
 

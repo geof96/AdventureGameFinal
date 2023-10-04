@@ -35,20 +35,23 @@ public class UserInterFace {
                 switch (commands[0]) {
                     case "go" -> {
                         String direction = commands[1];
-                        System.out.println("go " + direction);
                         adventure.go(direction);
 
                     }
                     case "take", "Take", "t", "T" -> {
                         String itemName = commands[1];
-                        System.out.println("You've added " + itemName + " to your inventory.");
                         adventure.takeAllocatedItem(itemName);
 
                     }
                     case "d", "D", "drop", "Drop" -> {
                         String itemName = commands[1];
                         adventure.dropFromInventory(itemName);
-                        System.out.println("You've dropped " + itemName + " from your inventory.");
+
+
+                    }
+                    case "e", "E", "eat", "Eat" ->{
+                        String itemName = commands[1];
+                        adventure.eat(itemName);
 
                     }
                 }

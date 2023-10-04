@@ -4,22 +4,12 @@ public class Player {
     public Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
 
-/*    public void addToInventory(Item item) {
-        inventory.add(item);
-    }*/
-
+    private int healthPoints = 100;
     public ArrayList<Item> getInventory() {
         return inventory;
     }
 
-
-  /*  public Item searchItem(String itemName) {
-        for (Item item : inventory) {
-            return item;
-        }
-        return null;
-    }*/
-
+    //Take item and drop item methods:
     public boolean takeItem(String itemName) {
         boolean isNull = false;
         Item item = currentRoom.findItem(itemName);
@@ -51,11 +41,21 @@ public class Player {
         return false;
     }
 
-
-
-    public Room getCurrentRoom() {
-        return currentRoom;
+    public boolean eatFood(String itemName){
+        boolean isNull = false;
+        Item item = currentRoom.findItem(itemName);
+        if (item instanceof Food){
+            for (Item item1 : inventory){
+                inventory.remove(item1);
+            };
+            healthPoints += ((Food) item).getHealth();
+            isNull = true;
+        }
+        return isNull;
     }
+
+//Take food and drop food methods:
+
     public void setCurrentRoom(Room room) {
         currentRoom = room;
     }

@@ -25,6 +25,7 @@ public class Adventure {
     }
 
     public void takeAllocatedItem(String itemName) {
+        System.out.println("You've added " + itemName + " to your inventory.");
         player.takeItem(itemName);
     }
 
@@ -37,6 +38,12 @@ public class Adventure {
 
     public void dropFromInventory(String itemName) {
         player.dropItem(itemName);
+        System.out.println("You've dropped " + itemName + " from your inventory.");
+    }
+
+    public void eat(String itemName){
+        player.eatFood(itemName);
+        System.out.println("You have eaten " + itemName + " and you have gained healthpoints.");
     }
 }
 
