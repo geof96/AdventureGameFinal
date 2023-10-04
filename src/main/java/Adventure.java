@@ -41,7 +41,7 @@ public class Adventure {
         System.out.println("You've dropped " + itemName + " from your inventory.");
     }
 
-    public void eat(String itemName){
+    public void eat(String itemName) {
         player.eatFood(itemName);
         System.out.println("You have eaten " + itemName + " and you have gained healthpoints.");
     }
