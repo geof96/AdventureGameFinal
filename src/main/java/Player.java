@@ -5,7 +5,6 @@ public class Player {
     private ArrayList<Item> inventory = new ArrayList<>();
 
     private int healthPoints = 100;
-
     public ArrayList<Item> getInventory() {
         return inventory;
     }
@@ -42,17 +41,16 @@ public class Player {
         return false;
     }
 
-    public boolean eatFood(String itemName) {
+    public boolean eatFood(String itemName){
         boolean isNull = false;
         Item item = currentRoom.findItem(itemName);
-        if (item instanceof Food) {
-            for (Item item1 : inventory) {
+        if (item instanceof Food){
+            for (Item item1 : inventory){
                 inventory.remove(item1);
-            }
-            ;
+            };
             healthPoints += ((Food) item).getHealth();
             isNull = true;
-        } else {
+        }else {
             System.out.println("You can't eat this");
         }
         return isNull;
