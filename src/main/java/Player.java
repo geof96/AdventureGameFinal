@@ -4,7 +4,12 @@ public class Player {
     public Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
 
-    public int healthPoints = 100;
+    private int healthPoints = 100;
+
+    public int getHealthPoints() {
+        System.out.println("This is how much you have: ");
+        return healthPoints;
+    }
 
     public ArrayList<Item> getInventory() {
         return inventory;
@@ -42,28 +47,29 @@ public class Player {
         return false;
     }
 
-    public int showHealthPoints(int healthPoints){
-        System.out.println("This is how much you have: " + healthPoints);
-        return this.healthPoints;
+    public void showHealthPoints() {
+        System.out.println(getHealthPoints());
     }
+
     public boolean eatFood(String itemName) {
-        boolean isNull;
-        Item item = currentRoom.findItem(itemName);
-        if (item instanceof Food) {
-            inventory.remove(item);
-            healthPoints += ((Food) item).getHealth();
+        boolean isNull = false;
+        for (Item item : inventory) {
+            if (item.getItemName().equalsIgnoreCase(itemName)) {
+                if (item instanceof Food) {
+                    inventory.remove(item);
+                    healthPoints += ((Food) item).getHealth();
 
+                    isNull = true;
 
-            isNull = true;
+                } else {
+                    System.out.println("You can't eat this");
+                    isNull = false;
+                }
+            }
 
-        }
-        else {
-            System.out.println("You can't eat this");
-            isNull = false;
         }
         return isNull;
     }
-
 //Take food and drop food methods:
 
     public void setCurrentRoom(Room room) {

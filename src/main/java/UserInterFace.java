@@ -53,7 +53,7 @@ public class UserInterFace {
                     case "e", "E", "eat", "Eat" ->{
                         String itemName = commands[1];
                         adventure.eat(itemName);
-                        System.out.println("You have eaten " + itemName + " and you have gained healthpoints.");
+
                     }
 
                 }
