@@ -50,7 +50,7 @@ public class UserInterFace {
                         System.out.println("You've dropped " + itemName + " from your inventory.");
 
                     }
-                    case "e", "E", "eat", "Eat" ->{
+                    case "e", "E", "eat", "Eat" -> {
                         String itemName = commands[1];
                         adventure.eat(itemName);
 

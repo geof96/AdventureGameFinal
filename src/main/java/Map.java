@@ -78,7 +78,6 @@ public class Map {
         currentRoom = room1;
 
 
-
     }
 
     //    public String itemRemoval(){

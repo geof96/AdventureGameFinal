@@ -44,7 +44,7 @@ public class Adventure {
 
     }
 
-    public void eat(String itemName){
+    public void eat(String itemName) {
         player.eatFood(itemName);
     }
 }

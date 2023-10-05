@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
     public Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
-
+    //hej slet
     private int healthPoints = 100;
 
     public int getHealthPoints() {
