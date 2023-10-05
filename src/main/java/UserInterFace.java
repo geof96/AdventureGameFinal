@@ -22,6 +22,7 @@ public class UserInterFace {
                     case "look", "l", "L" -> System.out.println(adventure.surroundings());
                     case "inventory", "INVENTORY", "i", "I", "inven", "INVEN" ->
                             System.out.println(adventure.seeInventory());
+                    case "health" -> System.out.println(adventure.healthPoints());
                     case "help", "h", "H" ->
                             System.out.println("Type either west, east, north or south to navigate. Type l or look to get the description of the room");
                     case "exit" -> {
@@ -41,19 +42,20 @@ public class UserInterFace {
                     case "take", "Take", "t", "T" -> {
                         String itemName = commands[1];
                         adventure.takeAllocatedItem(itemName);
-
+                        System.out.println("You've added " + itemName + " to your inventory.");
                     }
                     case "d", "D", "drop", "Drop" -> {
                         String itemName = commands[1];
                         adventure.dropFromInventory(itemName);
-
+                        System.out.println("You've dropped " + itemName + " from your inventory.");
 
                     }
                     case "e", "E", "eat", "Eat" ->{
                         String itemName = commands[1];
                         adventure.eat(itemName);
-
+                        System.out.println("You have eaten " + itemName + " and you have gained healthpoints.");
                     }
+
                 }
             } else {
                 System.out.println("Unknown command");
