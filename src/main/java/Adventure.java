@@ -36,7 +36,7 @@ public class Adventure {
     }
 
     public int healthPoints(){
-        player.getHealthPoints();
+        return player.getHealthPoints();
     }
 
     public void dropFromInventory(String itemName) {

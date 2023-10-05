@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
     public Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
-    //hej slet
+
     private int healthPoints = 100;
 
     public int getHealthPoints() {
@@ -47,13 +47,11 @@ public class Player {
         return false;
     }
 
-    public void showHealthPoints() {
-        System.out.println(getHealthPoints());
-    }
 
     public boolean eatFood(String itemName) {
         boolean isNull = false;
-        for (Item item : inventory) {
+        for (int i = 0 ; i < inventory.size(); i++) {
+            Item item = inventory.get(i);
             if (item.getItemName().equalsIgnoreCase(itemName)) {
                 if (item instanceof Food) {
                     inventory.remove(item);
