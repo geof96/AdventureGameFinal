@@ -5,6 +5,7 @@ public class Player {
     private ArrayList<Item> inventory = new ArrayList<>();
 
     private int healthPoints = 100;
+    private Item equipped;
 
     public int getHealthPoints() {
         System.out.println("This is how much you have: ");
@@ -27,6 +28,7 @@ public class Player {
         return isNull;
     }
 
+
     public boolean dropItem(String itemName) {
         Item itemToRemove = null;
 
@@ -48,9 +50,10 @@ public class Player {
     }
 
 
+    //Eat food method
     public boolean eatFood(String itemName) {
         boolean isNull = false;
-        for (int i = 0 ; i < inventory.size(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             Item item = inventory.get(i);
             if (item.getItemName().equalsIgnoreCase(itemName)) {
                 if (item instanceof Food) {
@@ -58,7 +61,11 @@ public class Player {
                     healthPoints += ((Food) item).getHealth();
 
                     isNull = true;
+                    System.out.println("You have eaten " + itemName + " and you have gained " + ((Food) item).getHealth() + " healthpoints.");
 
+                } else if (inventory.isEmpty()) {
+                    isNull = false;
+                    System.out.println("You don't have this item in your inventory.");
                 } else {
                     System.out.println("You can't eat this");
                     isNull = false;
@@ -68,7 +75,44 @@ public class Player {
         }
         return isNull;
     }
-//Take food and drop food methods:
+
+    public void equipWeapon(String itemName) {
+        for (int i = 0; i < inventory.size(); i++) {
+            Item item = inventory.get(i);
+            if (item.getItemName().equalsIgnoreCase(itemName)) {
+                if (item instanceof Weapon) {
+                    inventory.remove(item);
+                    equipped = item;
+                    System.out.println(itemName + " has been equipped.");
+                } else {
+                    System.out.println("Item cannot be equipped.");
+                }
+            }
+        }
+    }
+
+    public int attackAll() {
+        Item item = equipped;
+        if (equipped != null) {
+            if (((Weapon) item).remainingAmmo() > 0){
+                System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
+                System.out.println(((((Weapon) item).remainingAmmo())));
+                System.out.println("Bang! Bang!");
+            }
+            else if (((Weapon) item).remainingAmmo() == 0){
+                dropItem(equipped.getItemName());
+                System.out.println("You don't have anymore ammo.");
+            }
+            if (((Weapon) item).remainingUses() == 0){
+                System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
+                System.out.println("Quick melee attack!");
+            }
+        }
+
+
+        return healthPoints;
+    }
+
 
     public void setCurrentRoom(Room room) {
         currentRoom = room;

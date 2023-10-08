@@ -47,5 +47,16 @@ public class Adventure {
     public void eat(String itemName) {
         player.eatFood(itemName);
     }
-}
 
+    public void equipIt(String itemName){
+        player.equipWeapon(itemName);
+    }
+
+   /* public void attackIt(String itemName){
+        player.attackAll(itemName);
+    }*/
+
+    public int attackIt(){
+        return player.attackAll();
+    }
+}

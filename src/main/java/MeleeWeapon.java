@@ -8,6 +8,11 @@ public class MeleeWeapon extends Weapon {
         return 0;
     }
 
+    @Override
+    public int remainingAmmo() {
+        return remainingUses();
+    }
+
     public String toString() {
         return super.toString() + " " + " Weapon damage: " + getWeaponDamage();
     }

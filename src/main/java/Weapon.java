@@ -13,6 +13,8 @@ public abstract class Weapon extends Item {
         return weaponDamage;
     }
 
+    public abstract int remainingAmmo();
+
     public String toString() {
         return getItemName() + " " + weaponDamage + " ";
     }

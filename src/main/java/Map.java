@@ -62,30 +62,35 @@ public class Map {
 
         //Items in specified room
         room4.allocateItem("coins");
-        room2.allocateItem("sword");
         room5.allocateItem("gauntlet");
-        room8.allocateItem("sniper");
+
 
 
         //Food in specified room
         room3.allocateFood("redbull", 40);
-        room7.allocateFood("banan", 60);
-        room4.allocateFood("ris", 60);
+        room7.allocateFood("banan", 7);
+        room4.allocateFood("ris", 15);
         room1.allocateFood("hilib", 10);
         room9.allocateFood("cashewnut", 5);
+
+        //Ranged weapons
+        room8.allocateRangedWeapons("sniper", 20, 10);
+
+        //Melee weapons
+        room2.allocateMeleeWeapons("sword", 25);
 
 
         currentRoom = room1;
 
 
     }
-
-    //    public String itemRemoval(){
-//    currentRoom.removeItem(currentRoom.);
-//        return null;
-//    }
     public Room getCurrentRoom() {
         return currentRoom;
     }
 
 }
+
+//    public String itemRemoval(){
+//    currentRoom.removeItem(currentRoom.);
+//        return null;
+//    }
