@@ -1,6 +1,5 @@
 public class RangedWeapon extends Weapon {
     private int weaponAmmo;
-    private int ammoUsed;
 
     public RangedWeapon(String weaponName, int weaponDamage, int weaponAmmo) {
         super(weaponName, weaponDamage);
@@ -16,7 +15,7 @@ public class RangedWeapon extends Weapon {
 
     @Override
     public int remainingAmmo(){
-        return --weaponAmmo;
+        return weaponAmmo;
     }
 
     public String toString() {

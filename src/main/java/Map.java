@@ -68,9 +68,9 @@ public class Map {
 
         //Food in specified room
         room3.allocateFood("redbull", 40);
-        room7.allocateFood("banan", 7);
+        room7.allocateFood("", 7);
         room4.allocateFood("ris", 15);
-        room1.allocateFood("hilib", 10);
+        room1.allocateFood("Wagyu", 10);
         room9.allocateFood("cashewnut", 5);
 
         //Ranged weapons
