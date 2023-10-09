@@ -96,13 +96,14 @@ public class Player {
         if (equipped != null) {
             if (((Weapon) item).remainingAmmo() > 0){
                 System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
-                System.out.println(((((Weapon) item).remainingAmmo())));
+                System.out.println(((((Weapon) item).remainingAmmo() - 1)));
                 System.out.println("Bang! Bang!");
             }
-            else if (((Weapon) item).remainingAmmo() == 0){
+            else {
                 dropItem(equipped.getItemName());
                 System.out.println("You don't have anymore ammo.");
             }
+
             if (((Weapon) item).remainingUses() == 0){
                 System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
                 System.out.println("Quick melee attack!");
