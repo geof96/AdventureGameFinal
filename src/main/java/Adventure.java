@@ -25,7 +25,6 @@ public class Adventure {
     }
 
     public void takeAllocatedItem(String itemName) {
-        System.out.println("You've added " + itemName + " to your inventory.");
         player.takeItem(itemName);
     }
 
@@ -36,14 +35,28 @@ public class Adventure {
 
     }
 
+    public int healthPoints(){
+        return player.getHealthPoints();
+    }
+
     public void dropFromInventory(String itemName) {
         player.dropItem(itemName);
-        System.out.println("You've dropped " + itemName + " from your inventory.");
+
     }
 
     public void eat(String itemName) {
         player.eatFood(itemName);
-        System.out.println("You have eaten " + itemName + " and you have gained healthpoints.");
+    }
+
+    public void equipIt(String itemName){
+        player.equipWeapon(itemName);
+    }
+
+   /* public void attackIt(String itemName){
+        player.attackAll(itemName);
+    }*/
+
+    public int attackIt(){
+        return player.attackAll();
     }
 }
-

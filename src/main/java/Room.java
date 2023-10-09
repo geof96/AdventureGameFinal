@@ -99,6 +99,13 @@ public class Room {
         items.add(new Food(foodName, healthPoints));
     }
 
+    //Methods for allocating Ranged weapons and Melee weapons:
+    public void allocateMeleeWeapons(String weaponName, int weaponDamage){
+        items.add(new MeleeWeapon(weaponName, weaponDamage));
+    }
+    public void allocateRangedWeapons(String weaponName, int weaponDamage, int weaponAmmo){
+        items.add(new RangedWeapon(weaponName, weaponDamage, weaponAmmo));
+    }
 
 }
 
