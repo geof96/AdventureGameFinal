@@ -5,7 +5,7 @@ public class Enemy {
     private int enemyDamage;
     private String enemyWeapon;
 
-    public Enemy (String enemyName, int enemyHealth, int enemyDamage, String enemyWeapon) {
+    public Enemy(String enemyName, int enemyHealth, int enemyDamage, String enemyWeapon) {
         this.enemyName = enemyName;
         this.enemyHealth = enemyHealth;
         this.enemyDamage = enemyDamage;
@@ -38,4 +38,3 @@ public class Enemy {
                 '}';
     }
 }
-

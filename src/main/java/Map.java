@@ -37,7 +37,6 @@ public class Map {
         room4.setSouth(room7);
         room4.setNorth(room1);
 
-
         //Room5
         room5.setSouth(room8);
 
@@ -45,11 +44,9 @@ public class Map {
         room6.setSouth(room9);
         room6.setNorth(room3);
 
-
         //Room7
         room7.setEast(room8);
         room7.setNorth(room4);
-
 
         //Room8
         room8.setEast(room9);
@@ -60,18 +57,18 @@ public class Map {
         room9.setNorth(room6);
         room9.setWest(room8);
 
+
         //Items in specified room
         room4.allocateItem("coins");
         room5.allocateItem("gauntlet");
 
 
-
         //Food in specified room
         room3.allocateFood("redbull", 40);
-        room7.allocateFood("", 7);
-        room4.allocateFood("ris", 15);
-        room1.allocateFood("Wagyu", 10);
-        room9.allocateFood("cashewnut", 5);
+        room7.allocateFood("rice", 5);
+        room4.allocateFood("nuggets", 15);
+        room1.allocateFood("peanuts", 10);
+        room9.allocateFood("wagyu", 30);
 
         //Ranged weapons
         room8.allocateRangedWeapons("sniper", 20, 10);

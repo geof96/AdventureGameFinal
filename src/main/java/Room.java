@@ -106,6 +106,5 @@ public class Room {
     public void allocateRangedWeapons(String weaponName, int weaponDamage, int weaponAmmo){
         items.add(new RangedWeapon(weaponName, weaponDamage, weaponAmmo));
     }
-
 }
 

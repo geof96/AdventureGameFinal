@@ -10,5 +10,3 @@ public class Food extends Item {
         return health;
     }
 }
-
-

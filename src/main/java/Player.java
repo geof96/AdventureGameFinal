@@ -8,7 +8,7 @@ public class Player {
     private Item equipped;
 
     public int getHealthPoints() {
-        System.out.println("This is how much you have: ");
+        System.out.println("Current health: ");
         return healthPoints;
     }
 
@@ -28,7 +28,6 @@ public class Player {
         return isNull;
     }
 
-
     public boolean dropItem(String itemName) {
         Item itemToRemove = null;
 
@@ -42,13 +41,10 @@ public class Player {
         if (itemToRemove != null) {
             inventory.remove(itemToRemove);
             currentRoom.addItem(itemToRemove);
-
             return true;
         }
-
         return false;
     }
-
 
     //Eat food method
     public boolean eatFood(String itemName) {
@@ -76,6 +72,7 @@ public class Player {
         return isNull;
     }
 
+    //Equip weapon method
     public void equipWeapon(String itemName) {
         for (int i = 0; i < inventory.size(); i++) {
             Item item = inventory.get(i);
@@ -91,35 +88,33 @@ public class Player {
         }
     }
 
+    //Attack method
     public int attackAll() {
         Item item = equipped;
         if (equipped != null) {
-            if (((Weapon) item).remainingAmmo() > 0){
+            if (((Weapon) item).remainingAmmo() > 0) {
                 System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
-                System.out.println(((((Weapon) item).remainingAmmo() - 1)));
+                System.out.println(((((Weapon) item).remainingAmmo())));
                 System.out.println("Bang! Bang!");
-            }
-            else {
+
+            } else {
                 dropItem(equipped.getItemName());
                 System.out.println("You don't have anymore ammo.");
             }
 
-            if (((Weapon) item).remainingUses() == 0){
+            if (((Weapon) item).remainingUses() == 0) {
                 System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
                 System.out.println("Quick melee attack!");
             }
         }
-
-
         return healthPoints;
     }
-
 
     public void setCurrentRoom(Room room) {
         currentRoom = room;
     }
 
-    //Navigation
+    //Navigation method
     public void walk(String direction) {
         Room newRoom = findRoom(direction);
         if (newRoom != null) {

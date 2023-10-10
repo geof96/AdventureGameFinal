@@ -17,7 +17,6 @@ public class Adventure {
         player.walk(direction);
     }
 
-
     public String surroundings() {
 
         player.currentRoom.getDescription();
@@ -35,7 +34,7 @@ public class Adventure {
 
     }
 
-    public int healthPoints(){
+    public int healthPoints() {
         return player.getHealthPoints();
     }
 
@@ -48,7 +47,7 @@ public class Adventure {
         player.eatFood(itemName);
     }
 
-    public void equipIt(String itemName){
+    public void equipIt(String itemName) {
         player.equipWeapon(itemName);
     }
 
@@ -56,7 +55,7 @@ public class Adventure {
         player.attackAll(itemName);
     }*/
 
-    public int attackIt(){
+    public int attackIt() {
         return player.attackAll();
     }
 }

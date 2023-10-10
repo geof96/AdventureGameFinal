@@ -6,7 +6,7 @@ public class UserInterFace {
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
     String waitCommand = "Waiting for your command...";
-    String welcomeMessage = "Welcome To Cave of Time Travel. \nIn this game you have to find your way to the Infinity Gauntlet.\nYou start from the cave entrance and make sure to search around for items. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nType |help| for further control information. \nFor starters i would recommend that you look around. \nEnjoy the game!\n";
+    String welcomeMessage = "Welcome To Cave of Time Travel! \nIn this game you have to find your way to the infamous Infinity Gauntlet.\nYou start from the cave entrance and make sure to search around for items. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nType |help| for further control information. \nFor starters i would recommend that you look around. \nEnjoy the game!\n";
 
 
     public void startAdventure() {
@@ -43,7 +43,7 @@ public class UserInterFace {
                         System.out.println("Thanks for playing!");
                         isRunning = false;
                     }
-                    default -> System.out.println("Unknown command");
+                    default -> System.out.println("Unknown command!");
                 }
 
             } else if (commands.length >= 2) {
@@ -76,10 +76,9 @@ public class UserInterFace {
                         System.out.println(waitCommand);
                     }
 
-
                 }
             } else {
-                System.out.println("Unknown command");
+                System.out.println("Unknown command!");
             }
         }
         while (isRunning);
