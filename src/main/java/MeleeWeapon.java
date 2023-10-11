@@ -9,6 +9,11 @@ public class MeleeWeapon extends Weapon {
     }
 
     @Override
+    public boolean canUse() {
+        return true;
+    }
+
+    @Override
     public int remainingAmmo() {
         return remainingUses();
     }

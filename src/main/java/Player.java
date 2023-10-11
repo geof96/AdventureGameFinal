@@ -88,27 +88,41 @@ public class Player {
         }
     }
 
+    public void unEquip() {
+        if (equipped != null) {
+            Weapon currentWeapon = ((Weapon) equipped);
+            inventory.add(currentWeapon);
+            equipped = null;
+            System.out.println("You have unequipped: " + currentWeapon.getItemName());
+
+
+        }
+    }
+
     //Attack method
     public int attackAll() {
-        Item item = equipped;
-        if (equipped != null) {
-            if (((Weapon) item).remainingAmmo() > 0) {
-                System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
-                System.out.println(((((Weapon) item).remainingAmmo())));
-                System.out.println("Bang! Bang!");
+        if (equipped != null && currentRoom.getEnemyList().size() != 0) {
+            Weapon currentWeapon = ((Weapon) equipped);
+            Enemy enemy = currentRoom.getEnemyList().get(0);
+            if (currentWeapon.canUse()) {
+                enemy.setEnemyHealth(enemy.getEnemyHealth() - currentWeapon.getWeaponDamage());
+                healthPoints -= enemy.getEnemyWeapon().getWeaponDamage();
+                System.out.println("You have traded hits with: " + enemy.getEnemyName() + " Remaining enemy health"+ enemy.getEnemyHealth() + ". " + "Check health");
 
-            } else {
-                dropItem(equipped.getItemName());
-                System.out.println("You don't have anymore ammo.");
+            }
+            else {
+                System.out.println("You dont have anymore ammo. ");
             }
 
-            if (((Weapon) item).remainingUses() == 0) {
-                System.out.println("You have attacked and dealt " + ((Weapon) item).getWeaponDamage());
-                System.out.println("Quick melee attack!");
+            if (enemy.getEnemyHealth() <= 0) {
+                currentRoom.addItem(enemy.getEnemyWeapon());
+                currentRoom.getEnemyList().remove(enemy);
             }
+
         }
         return healthPoints;
     }
+
 
     public void setCurrentRoom(Room room) {
         currentRoom = room;
@@ -119,7 +133,7 @@ public class Player {
         Room newRoom = findRoom(direction);
         if (newRoom != null) {
             currentRoom = newRoom;
-            System.out.println(currentRoom.getName() + currentRoom.getDescription());
+            System.out.println(currentRoom.getName() + currentRoom.getDescription() + currentRoom.getItems() + currentRoom.getEnemyList());
         } else {
             System.out.println("You can't walk this way! Take another route.");
         }
