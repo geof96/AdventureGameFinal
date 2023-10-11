@@ -28,6 +28,7 @@ public class Player {
         return isNull;
     }
 
+    //Drop item method
     public boolean dropItem(String itemName) {
         Item itemToRemove = null;
 
@@ -88,6 +89,7 @@ public class Player {
         }
     }
 
+    //Unequip weapon method
     public void unEquip() {
         if (equipped != null) {
             Weapon currentWeapon = ((Weapon) equipped);
@@ -111,12 +113,13 @@ public class Player {
 
             }
             else {
-                System.out.println("You dont have anymore ammo. ");
+                System.out.println("You do not have anymore ammo. ");
             }
 
             if (enemy.getEnemyHealth() <= 0) {
-                currentRoom.addItem(enemy.getEnemyWeapon());
                 currentRoom.getEnemyList().remove(enemy);
+                currentRoom.addItem(enemy.getEnemyWeapon());
+                System.out.println("You have defeated " + enemy.getEnemyName() + " and weapon has been dropped: " + enemy.getEnemyWeapon());
             }
 
         }
