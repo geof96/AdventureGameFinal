@@ -85,7 +85,7 @@ public class UserInterFace {
             // Player deaths
             if (adventure.healthPoints() <= 0){
                 isRunning = false;
-                System.out.println("You have been defeated. Start the game again to find the Infitity Gauntlet");
+                System.out.println("You have been defeated. Start the game again to find the Infinity Gauntlet");
             }
 
         }
