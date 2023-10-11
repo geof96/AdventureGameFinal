@@ -51,13 +51,12 @@ public class Adventure {
         player.equipWeapon(itemName);
     }
 
-    public int attackIt() {
-        return player.attackAll();
+    public void attackIt() {
+        player.attackAll();
     }
 
-public void unEquipWeapon(){
+    public void unEquipWeapon() {
         player.unEquip();
-}
-
+    }
 }
 

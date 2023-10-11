@@ -77,7 +77,7 @@ public class Player {
     public void equipWeapon(String itemName) {
         for (int i = 0; i < inventory.size(); i++) {
             Item item = inventory.get(i);
-            if (item.getItemName().equalsIgnoreCase(itemName)) {
+            if (item.getItemName().equalsIgnoreCase(itemName) && equipped == null) {
                 if (item instanceof Weapon) {
                     inventory.remove(item);
                     equipped = item;
@@ -85,6 +85,9 @@ public class Player {
                 } else {
                     System.out.println("Item cannot be equipped.");
                 }
+            } else {
+                System.out.println("Unequip " + equipped.getItemName() + " to equip another weapon");
+
             }
         }
     }
@@ -102,28 +105,25 @@ public class Player {
     }
 
     //Attack method
-    public int attackAll() {
+    public void attackAll() {
         if (equipped != null && currentRoom.getEnemyList().size() != 0) {
             Weapon currentWeapon = ((Weapon) equipped);
             Enemy enemy = currentRoom.getEnemyList().get(0);
             if (currentWeapon.canUse()) {
                 enemy.setEnemyHealth(enemy.getEnemyHealth() - currentWeapon.getWeaponDamage());
                 healthPoints -= enemy.getEnemyWeapon().getWeaponDamage();
-                System.out.println("You have traded hits with: " + enemy.getEnemyName() + " Remaining enemy health"+ enemy.getEnemyHealth() + ". " + "Check health");
-
-            }
-            else {
+                System.out.println("You have traded hits with: " + enemy.getEnemyName() + " Remaining enemy health" + enemy.getEnemyHealth() + ". ");
+                System.out.println("Your health:" + healthPoints);
+            } else {
                 System.out.println("You do not have anymore ammo. ");
             }
-
+            //Enemy deaths
             if (enemy.getEnemyHealth() <= 0) {
                 currentRoom.getEnemyList().remove(enemy);
                 currentRoom.addItem(enemy.getEnemyWeapon());
                 System.out.println("You have defeated " + enemy.getEnemyName() + " and weapon has been dropped: " + enemy.getEnemyWeapon());
             }
-
         }
-        return healthPoints;
     }
 
 
@@ -136,7 +136,7 @@ public class Player {
         Room newRoom = findRoom(direction);
         if (newRoom != null) {
             currentRoom = newRoom;
-            System.out.println(currentRoom.getName() + currentRoom.getDescription() + currentRoom.getItems() + currentRoom.getEnemyList());
+            System.out.println(currentRoom.getName() + currentRoom.getDescription() + currentRoom.getEnemyList());
         } else {
             System.out.println("You can't walk this way! Take another route.");
         }

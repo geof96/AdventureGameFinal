@@ -32,7 +32,7 @@ public class UserInterFace {
                         System.out.println(waitCommand);
                     }
                     case "attack" -> {
-                        System.out.println(adventure.attackIt());
+                        adventure.attackIt();
                         System.out.println(waitCommand);
                     }
                     case "unequip" -> adventure.unEquipWeapon();
@@ -82,6 +82,12 @@ public class UserInterFace {
             } else {
                 System.out.println("Unknown command!");
             }
+            // Player deaths
+            if (adventure.healthPoints() <= 0){
+                isRunning = false;
+                System.out.println("You have been defeated. Start the game again to find the Infitity Gauntlet");
+            }
+
         }
         while (isRunning);
     }
