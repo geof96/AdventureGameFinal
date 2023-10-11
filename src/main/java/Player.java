@@ -109,10 +109,9 @@ public class Player {
             if (currentWeapon.canUse()) {
                 enemy.setEnemyHealth(enemy.getEnemyHealth() - currentWeapon.getWeaponDamage());
                 healthPoints -= enemy.getEnemyWeapon().getWeaponDamage();
-                System.out.println("You have traded hits with: " + enemy.getEnemyName() + " Remaining enemy health"+ enemy.getEnemyHealth() + ". " + "Check health");
+                System.out.println("You have traded hits with: " + enemy.getEnemyName() + " Remaining enemy health" + enemy.getEnemyHealth() + ". " + "Check health");
 
-            }
-            else {
+            } else {
                 System.out.println("You do not have anymore ammo. ");
             }
 

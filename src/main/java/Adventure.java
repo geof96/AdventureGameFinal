@@ -31,7 +31,6 @@ public class Adventure {
         System.out.println("These are your items: ");
         player.getInventory();
         return player.getInventory();
-
     }
 
     public int healthPoints() {
@@ -55,9 +54,8 @@ public class Adventure {
         return player.attackAll();
     }
 
-public void unEquipWeapon(){
+    public void unEquipWeapon() {
         player.unEquip();
-}
-
+    }
 }
 

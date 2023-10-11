@@ -2,22 +2,18 @@ public class Map {
 
     private Room currentRoom;
 
-
     public void buildMap() {
 
-        // peg på starter room
-        Room room1 = new Room("Entrance of Time Travel: ", "You step into a time machine and find yourself in ancient Rome during a grand gladiator tournament. The coliseum roars with excitement. Paths lead east and south.");
-        Room room2 = new Room("Gladiator's Arena: ", "You are now in the heart of the gladiator arena. Gladiators clash swords while the crowd cheers. You find an ancient sword and a water flask.");
-        Room room3 = new Room("Renaissance Courtyard: ", "You've traveled to the Renaissance era. Da Vinci's artworks adorn the walls. A table holds a bottle of fine wine and a flask of coffee.");
-        Room room4 = new Room("Egyptian Treasure Chamber: ", "You're in ancient Egypt, inside a treasure chamber filled with priceless artifacts. A mummy case stands against one wall.");
-        Room room5 = new Room("World Cup Final 2023: ", "You've arrived at the 2023 World Cup final match. The stadium roars as Messi scores a goal. You see the fabled Infinity Gauntlet.");
-        Room room6 = new Room("Renaissance Art Studio: ", "In this Renaissance-era art studio, you find vibrant paintings and sculptures. There's a palette and a brush on a worktable.");
-        Room room7 = new Room("1920s Speakeasy: ", " You're in a 1920s speakeasy during the Prohibition era. Jazz music fills the air. You spot a violin and a bottle of bootleg whiskey.");
-        Room room8 = new Room("Rock 'n' Roll Stage: ", " You're on the stage of a rock 'n' roll concert from the 1960s. The crowd goes wild. You find an electric guitar and a harmonica.");
-        Room room9 = new Room("Library of Alexandria: ", " You've traveled back to ancient Alexandria, home to the great library. There are scrolls and books of wisdom. A pair of reading glasses sits on a table.");
-        //Room room10 = new Room();
-        //Room room11 = new Room();
-        //Room room12 =  new Room();
+        //Rooms descriptions
+        Room room1 = new Room("Entrance of Time Travel: ", "You step into a time machine and find yourself in ancient Rome during a grand gladiator tournament. The coliseum roars with excitement. Paths lead east and south...");
+        Room room2 = new Room("Gladiator's Arena: ", "You are now in the heart of the gladiator arena. Swords clash while the crowd cheers. Gladiator gear scattered all over the arena could come in handy...");
+        Room room3 = new Room("Renaissance Courtyard: ", "You've traveled to the Renaissance era. Da Vinci's artworks adorn the walls. A table holds a bottle of an rather odd drink not from this time...");
+        Room room4 = new Room("Egyptian Treasure Chamber: ", "You're in ancient Egypt, inside a treasure chamber filled with priceless artifacts. Shiny treasure blinding you from every angle...");
+        Room room5 = new Room("World Cup Final 2022: ", "You've arrived at Qatar, it's the 2022 World Cup final match. The stadium roars as Messi scores a goal. Your eyes widen as you see the infamous Infinity Gauntlet...");
+        Room room6 = new Room("Ancient Samurai Dojo: ", " You find yourself in the courtyard of an ancient Japanese samurai dojo. Cherry blossoms falling from the trees. A samurai challenges you...");
+        Room room7 = new Room("1920s Speakeasy: ", " You're in a 1920s speakeasy during the Prohibition era. It's late evening and jazz music fills the air. Only thing missing is a refreshing drink...");
+        Room room8 = new Room("Rock 'n' Roll Stage: ", " You're on the stage of a rock 'n' roll concert from the 1960s. The crowd goes wild. Suddenly you are confronted by a somewhat familiar man...");
+        Room room9 = new Room("Library of Alexandria: ", " You've traveled back in time to ancient Alexandria, home to the great library. Massive halls with scrolls of eternal wisdom on every shelf. This place even has a dining room...");
 
         //Room1 directions
         room1.setEast(room2);
@@ -65,10 +61,10 @@ public class Map {
 
         //Food in specified room
         room3.allocateFood("redbull", 40);
-        room7.allocateFood("rice", 5);
-        room4.allocateFood("nuggets", 15);
-        room1.allocateFood("peanuts", 10);
-        room9.allocateFood("wagyu", 30);
+        room7.allocateFood("whiskey", 20);
+        room4.allocateFood("nuggets", 30);
+        room1.allocateFood("peanuts", 15);
+        room9.allocateFood("wagyu", 35);
 
         //Ranged weapons
         room8.allocateRangedWeapons("sniper", 20, 10);
@@ -77,14 +73,13 @@ public class Map {
         room2.allocateMeleeWeapons("sword", 15);
 
         //Enemies in the map
-
         // Enemy 1
-        MeleeWeapon pepeWeapon = new MeleeWeapon("kick", 15);
-        room6.allocateEnemy("Pepe", 100, pepeWeapon);
+        MeleeWeapon samuraiWeapon = new MeleeWeapon("katana", 25);
+        room6.allocateEnemy("Samurai Jack", 100, samuraiWeapon);
 
         //Enemy 2
-        MeleeWeapon netenyahuWeapon = new MeleeWeapon("Zionism", 20);
-        room8.allocateEnemy("netenhayu", 100, netenyahuWeapon);
+        MeleeWeapon netenyahuWeapon = new MeleeWeapon("zionism", 20);
+        room8.allocateEnemy("Benjamin Netenhayu", 100, netenyahuWeapon);
 
 
         currentRoom = room1;
@@ -93,6 +88,5 @@ public class Map {
     public Room getCurrentRoom() {
         return currentRoom;
     }
-
 }
 
