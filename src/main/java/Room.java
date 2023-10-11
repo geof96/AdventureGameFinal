@@ -65,10 +65,6 @@ public class Room {
         return description;
     }
 
-    /*public void setDescription(String description) {
-        this.description = description;
-    }*/
-
     public ArrayList<Item> getItems() {
         return items;
     }
@@ -101,21 +97,21 @@ public class Room {
     }
 
     //Methods for allocating Ranged weapons and Melee weapons:
-    public void allocateMeleeWeapons(String weaponName, int weaponDamage){
+    public void allocateMeleeWeapons(String weaponName, int weaponDamage) {
         items.add(new MeleeWeapon(weaponName, weaponDamage));
     }
-    public void allocateRangedWeapons(String weaponName, int weaponDamage, int weaponAmmo){
+
+    public void allocateRangedWeapons(String weaponName, int weaponDamage, int weaponAmmo) {
         items.add(new RangedWeapon(weaponName, weaponDamage, weaponAmmo));
     }
 
 
-
-    public void allocateEnemy(String enemyName, int enemyHealth,  Weapon enemyWeapon){
+    public void allocateEnemy(String enemyName, int enemyHealth, Weapon enemyWeapon) {
         enemyList.add(new Enemy(enemyName, enemyHealth, enemyWeapon));
     }
+
     public ArrayList<Enemy> getEnemyList() {
         return enemyList;
     }
-
 }
 
