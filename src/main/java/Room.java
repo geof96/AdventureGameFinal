@@ -8,6 +8,7 @@ public class Room {
     private String name;
     private String description;
     private ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Enemy> enemyList = new ArrayList<>();
 
 
     public Room(String name, String description) {
@@ -106,5 +107,15 @@ public class Room {
     public void allocateRangedWeapons(String weaponName, int weaponDamage, int weaponAmmo){
         items.add(new RangedWeapon(weaponName, weaponDamage, weaponAmmo));
     }
+
+
+
+    public void allocateEnemy(String enemyName, int enemyHealth,  Weapon enemyWeapon){
+        enemyList.add(new Enemy(enemyName, enemyHealth, enemyWeapon));
+    }
+    public ArrayList<Enemy> getEnemyList() {
+        return enemyList;
+    }
+
 }
 

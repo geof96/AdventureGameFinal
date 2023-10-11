@@ -35,6 +35,8 @@ public class UserInterFace {
                         System.out.println(adventure.attackIt());
                         System.out.println(waitCommand);
                     }
+                    case "unequip" -> adventure.unEquipWeapon();
+
                     case "help", "h", "H" -> {
                         System.out.println("Type |go| followed with direction of choice( |west|, |east|, |north| or |south|) to navigate. \nType |l| or |look| to search for items, food or weapons in each room. \nType |health| to see health points (you start with 100). \nType |attack| to melee or shoot. \nIf you find items in a room, you can; \n1. Type |take| followed by the name of the item. Item will be stored in your inventory. \n2. Type |drop| followed by the name of the item. Item will be dropped from inventory. \n3. Type |eat| followed by the name of the food. This will make you eat a food from your inventory and gain health. \n4. Type |equip| followed by the name of the weapon. This will make you ready to attack.");
                         System.out.println(waitCommand);

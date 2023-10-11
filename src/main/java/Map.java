@@ -74,20 +74,25 @@ public class Map {
         room8.allocateRangedWeapons("sniper", 20, 10);
 
         //Melee weapons
-        room2.allocateMeleeWeapons("sword", 25);
+        room2.allocateMeleeWeapons("sword", 15);
+
+        //Enemies in the map
+
+        // Enemy 1
+        MeleeWeapon pepeWeapon = new MeleeWeapon("kick", 15);
+        room6.allocateEnemy("Pepe", 100, pepeWeapon);
+
+        //Enemy 2
+        MeleeWeapon netenyahuWeapon = new MeleeWeapon("Zionism", 20);
+        room8.allocateEnemy("netenhayu", 100, netenyahuWeapon);
 
 
         currentRoom = room1;
-
-
     }
+
     public Room getCurrentRoom() {
         return currentRoom;
     }
 
 }
 
-//    public String itemRemoval(){
-//    currentRoom.removeItem(currentRoom.);
-//        return null;
-//    }

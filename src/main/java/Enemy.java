@@ -2,13 +2,15 @@ public class Enemy {
 
     private String enemyName;
     private int enemyHealth;
-    private int enemyDamage;
-    private String enemyWeapon;
+    private Weapon enemyWeapon;
 
-    public Enemy(String enemyName, int enemyHealth, int enemyDamage, String enemyWeapon) {
+    public void setEnemyHealth(int enemyHealth) {
+        this.enemyHealth = enemyHealth;
+    }
+
+    public Enemy (String enemyName, int enemyHealth, Weapon enemyWeapon) {
         this.enemyName = enemyName;
         this.enemyHealth = enemyHealth;
-        this.enemyDamage = enemyDamage;
         this.enemyWeapon = enemyWeapon;
     }
 
@@ -20,21 +22,17 @@ public class Enemy {
         return enemyHealth;
     }
 
-    public int getEnemyDamage() {
-        return enemyDamage;
-    }
 
-    public String getEnemyWeapon() {
+    public Weapon getEnemyWeapon() {
         return enemyWeapon;
     }
 
     @Override
     public String toString() {
-        return "Enemy{" +
-                "enemyName='" + enemyName + '\'' +
-                ", enemyHealth=" + enemyHealth +
-                ", enemyDamage=" + enemyDamage +
-                ", enemyWeapon='" + enemyWeapon + '\'' +
-                '}';
+        return "Enemy:" +
+                enemyName +
+                ", Health:" + enemyHealth  +
+                ", Weapon:" + enemyWeapon;
     }
 }
+
