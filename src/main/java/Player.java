@@ -10,6 +10,12 @@ public class Player {
         return healthPoints;
     }
 
+    public String surroundings() {
+
+        currentRoom.getDescription();
+        return currentRoom.getDescription() + currentRoom.getItems();
+    }
+
     public ArrayList<Item> getInventory() {
         return inventory;
     }

@@ -17,11 +17,9 @@ public class Adventure {
         player.walk(direction);
     }
 
-    public String surroundings() {
-
-        player.currentRoom.getDescription();
-        return player.currentRoom.getDescription() + player.currentRoom.getItems();
-    }
+public String observe(){
+        return player.surroundings();
+}
 
     public void takeAllocatedItem(String itemName) {
         player.takeItem(itemName);

@@ -21,7 +21,7 @@ public class UserInterFace {
             if (commands.length == 1) {
                 switch (commands[0]) {
                     case "look", "l", "L" -> {
-                        System.out.println(adventure.surroundings());
+                        System.out.println(adventure.observe());
                         System.out.println(waitCommand);
                     }
                     case "inventory", "INVENTORY", "i", "I", "inven", "INVEN" -> {
