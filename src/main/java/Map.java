@@ -9,7 +9,7 @@ public class Map {
         Room room2 = new Room("Gladiator's Arena: ", "You are now in the heart of the gladiator arena. Swords clash while the crowd cheers. Gladiator gear scattered all over the arena could come in handy...");
         Room room3 = new Room("Renaissance Courtyard: ", "You've traveled to the Renaissance era. Da Vinci's artworks adorn the walls. A table holds a bottle of an rather odd drink not from this time...");
         Room room4 = new Room("Egyptian Treasure Chamber: ", "You're in ancient Egypt, inside a treasure chamber filled with priceless artifacts. Shiny treasure blinding you from every angle...");
-        Room room5 = new Room("World Cup Final 2022: ", "You've arrived at Qatar, it's the 2022 World Cup final match. The stadium roars as Messi scores a goal. Your eyes widen as you see the infamous Infinity Gauntlet...");
+        Room room5 = new Room("World Cup Final 2022: ", "You've arrived in Qatar, it's the 2022 World Cup final match. The stadium roars as Messi scores a goal. Your eyes widen as you see the infamous Infinity Gauntlet...");
         Room room6 = new Room("Ancient Samurai Dojo: ", " You find yourself in the courtyard of an ancient Japanese samurai dojo. Cherry blossoms falling from the trees. A samurai challenges you...");
         Room room7 = new Room("1920s Speakeasy: ", " You're in a 1920s speakeasy during the Prohibition era. It's late evening and jazz music fills the air. Only thing missing is a refreshing drink...");
         Room room8 = new Room("Rock 'n' Roll Stage: ", " You're on the stage of a rock 'n' roll concert from the 1960s. The crowd goes wild. Suddenly you are confronted by a somewhat familiar man...");
