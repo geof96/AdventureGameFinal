@@ -15,17 +15,16 @@ public class Map {
         Room room8 = new Room("Rock 'n' Roll Stage: ", " You're on the stage of a rock 'n' roll concert from the 1960s. The crowd goes wild. Suddenly you are confronted by a somewhat familiar man...");
         Room room9 = new Room("Library of Alexandria: ", " You've traveled back in time to ancient Alexandria, home to the great library. Massive halls with scrolls of eternal wisdom on every shelf. This place even has a dining room...");
 
-        //Room1 directions
+        //Room directions
+        //Room1
         room1.setEast(room2);
         room1.setSouth(room4);
 
-
-        //Room2 directions
+        //Room2
         room2.setEast(room3);
         room2.setWest(room1);
 
         //Room3
-
         room3.setSouth(room6);
         room3.setWest(room2);
 
