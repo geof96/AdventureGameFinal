@@ -5,6 +5,7 @@ public class UserInterFace {
     Adventure adventure = new Adventure();
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
+    boolean haveWon = false;
     String welcomeMessage = "\nWelcome To TimeScape Adventure\n \nIn this game you have to find your way to the infamous Infinity Gauntlet. \nYou start from the cave entrance and make sure to search around for items. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nType |help| for further control information. \nFor starters i would recommend that you look around. \nEnjoy the game!\n";
     String waitCommand = "\nWaiting for your command...";
 
@@ -90,9 +91,12 @@ public class UserInterFace {
 
             //Player wins
             if (adventure.powerOfInfinity()){
-                System.out.println("You have optained the Infinity Gauntlet and won the game");
+                haveWon = true;
                 isRunning = false;
 
+            }
+            if (haveWon){
+                System.out.println("You have completed the game! \nYou found the Infinity Gauntlet and sat on the throne in the middle of the stadium. \nYou snapped your finge....  \nerror 404.");
             }
         }
         while (isRunning);
