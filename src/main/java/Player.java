@@ -8,7 +8,6 @@ public class Player {
     private Item equipped;
 
     public int getHealthPoints() {
-        System.out.println("Current health: ");
         return healthPoints;
     }
 
