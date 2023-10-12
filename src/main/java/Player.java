@@ -91,17 +91,6 @@ public class Player {
         }
     }
 
-    public boolean equippedGauntlet(){
-        if (equipped != null && equipped.getItemName().equals("gauntlet")) {
-            boolean gauntletEquipped = false;
-            if (gauntletEquipped == equipped.getItemName().equals("gauntlet")){
-                return true;
-
-            }
-
-        }
-        return false;
-    }
 
     //Unequip weapon method
     public void unEquip() {
@@ -114,6 +103,18 @@ public class Player {
 
         }
     }
+    public boolean equippedGauntlet(){
+        if (equipped != null && equipped.getItemName().equals("gauntlet")) {
+            boolean gauntletEquipped = false;
+            if (gauntletEquipped == equipped.getItemName().equals("gauntlet")){
+                return true;
+
+            }
+
+        }
+        return false;
+    }
+
 
     //Attack method
     public void attackAll() {
