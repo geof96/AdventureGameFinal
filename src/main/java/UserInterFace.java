@@ -5,7 +5,7 @@ public class UserInterFace {
     Adventure adventure = new Adventure();
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
-    String welcomeMessage = "\nWelcome To TimeScape Adventure\n \nIn this game you have to find your way to the infamous Infinity Gauntlet.\nYou start from the cave entrance and make sure to search around for items. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nType |help| for further control information. \nFor starters i would recommend that you look around. \nEnjoy the game!\n";
+    String welcomeMessage = "\nWelcome To TimeScape Adventure\n \nIn this game you have to find your way to the infamous Infinity Gauntlet. \nYou start from the cave entrance and make sure to search around for items. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nType |help| for further control information. \nFor starters i would recommend that you look around. \nEnjoy the game!\n";
     String waitCommand = "\nWaiting for your command...";
 
 
