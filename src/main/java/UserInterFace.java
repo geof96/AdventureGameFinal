@@ -5,8 +5,8 @@ public class UserInterFace {
     Adventure adventure = new Adventure();
     Scanner command = new Scanner(System.in);
     boolean isRunning = true;
-    String waitCommand = "Waiting for your command...";
-    String welcomeMessage = "Welcome To Cave of Time Travel! \nIn this game you have to find your way to the infamous Infinity Gauntlet.\nYou start from the cave entrance and make sure to search around for items. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nType |help| for further control information. \nFor starters i would recommend that you look around. \nEnjoy the game!\n";
+    String welcomeMessage = "\nWelcome To TimeScape Adventure\n \nIn this game you have to find your way to the infamous Infinity Gauntlet.\nYou start from the cave entrance and make sure to search around for items. \nProgram is not case sensitive, so don't worry about CAPS LOCK. \nType |help| for further control information. \nFor starters i would recommend that you look around. \nEnjoy the game!\n";
+    String waitCommand = "\nWaiting for your command...";
 
 
     public void startAdventure() {
@@ -38,7 +38,7 @@ public class UserInterFace {
                     case "unequip" -> adventure.unEquipWeapon();
 
                     case "help", "h", "H" -> {
-                        System.out.println("-Type |go| followed with direction of choice( |west|, |east|, |north| or |south|) to navigate. \n-Type |l| or |look| to search for items, food or weapons in each room. \n-Type |health| to see health points (you start with 100). \n-Type |attack| to melee or shoot. \n-If you find items in a room, you can; \n 1. Type |take| followed by the name of the item. Item will be stored in your inventory. \n 2. Type |drop| followed by the name of the item. Item will be dropped from inventory. \n 3. Type |eat| followed by the name of the food. This will make you eat a food from your inventory and gain health. \n 4. Type |equip| followed by the name of the weapon. This will make you ready to attack.");
+                        System.out.println("-Type |go| followed with direction of choice( |west|, |east|, |north| or |south|) to navigate. \n-Type |l| or |look| to search for items, food or weapons in each room. \n-Type |health| to see health points (you start with 100). \n-Type |attack| to melee or shoot. \n-If you find items in a room, you can; \n 1. Type |take| followed by the name of the item. Item will be stored in your inventory. \n 2. Type |drop| followed by the name of the item. Item will be dropped from inventory. \n 3. Type |eat / drink| followed by the name of the food. This will make you eat/drink the food from your inventory and gain health. \n 4. Type |equip| followed by the name of the weapon. This will make you ready to attack. \n 5. Type |unequip| to unequip your current weapon. ");
                         System.out.println(waitCommand);
                     }
                     case "exit" -> {
@@ -94,7 +94,6 @@ public class UserInterFace {
                 isRunning = false;
 
             }
-
         }
         while (isRunning);
     }
