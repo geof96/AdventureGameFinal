@@ -39,7 +39,7 @@ public class UserInterFace {
                     case "unequip" -> adventure.unEquipWeapon();
 
                     case "help", "h", "H" -> {
-                        System.out.println("-Type |go| followed with direction of choice( |west|, |east|, |north| or |south|) to navigate. \n-Type |l| or |look| to search for items, food or weapons in each room. \n-Type |health| to see health points (you start with 100). \n-Type |attack| to melee or shoot. \n-If you find items in a room, you can; \n 1. Type |take| followed by the name of the item. Item will be stored in your inventory. \n 2. Type |drop| followed by the name of the item. Item will be dropped from inventory. \n 3. Type |eat / drink| followed by the name of the food. This will make you eat/drink the food from your inventory and gain health. \n 4. Type |equip| followed by the name of the weapon. This will make you ready to attack. \n 5. Type |unequip| to unequip your current weapon. ");
+                        System.out.println("-Type |go    | followed with direction of choice( |west|, |east|, |north| or |south|) to navigate. \n-Type |l| or |look| to search for items, food or weapons in each room. \n-Type |health| to see health points (you start with 100). \n-Type |attack| to melee or shoot. \n-If you find items in a room, you can; \n 1. Type |take| followed by the name of the item. Item will be stored in your inventory. \n 2. Type |drop| followed by the name of the item. Item will be dropped from inventory. \n 3. Type |eat / drink| followed by the name of the food. This will make you eat/drink the food from your inventory and gain health. \n 4. Type |equip| followed by the name of the weapon. This will make you ready to attack. \n 5. Type |unequip| to unequip your current weapon. ");
                         System.out.println(waitCommand);
                     }
                     case "exit" -> {
@@ -84,18 +84,18 @@ public class UserInterFace {
                 System.out.println("Unknown command!");
             }
             // Player deaths
-            if (adventure.healthPoints() <= 0){
+            if (adventure.healthPoints() <= 0) {
                 isRunning = false;
                 System.out.println("You have been defeated. Start the game again to find the Infinity Gauntlet");
             }
 
             //Player wins
-            if (adventure.powerOfInfinity()){
+            if (adventure.powerOfInfinity()) {
                 haveWon = true;
                 isRunning = false;
 
             }
-            if (haveWon){
+            if (haveWon) {
                 System.out.println("You have completed the game! \nYou found the Infinity Gauntlet and sat on the throne in the middle of the stadium. \nYou snapped your finge....  \nerror 404.");
             }
         }

@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Player {
-    public Room currentRoom;
+    private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
-
     private int healthPoints = 1000;
     private Item equipped;
 
