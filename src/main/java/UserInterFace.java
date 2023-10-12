@@ -67,7 +67,7 @@ public class UserInterFace {
                         System.out.println("You've dropped " + itemName + " from your inventory.");
                         System.out.println(waitCommand);
                     }
-                    case "eat", "Eat" -> {
+                    case "eat", "Eat", "drink", "Drink" -> {
                         String itemName = commands[1];
                         adventure.eat(itemName);
                         System.out.println(waitCommand);
@@ -86,6 +86,13 @@ public class UserInterFace {
             if (adventure.healthPoints() <= 0){
                 isRunning = false;
                 System.out.println("You have been defeated. Start the game again to find the Infinity Gauntlet");
+            }
+
+            //Player wins
+            if (adventure.powerOfInfinity()){
+                System.out.println("You have optained the Infinity Gauntlet and won the game");
+                isRunning = false;
+
             }
 
         }

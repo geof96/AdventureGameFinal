@@ -56,7 +56,7 @@ public class Map {
 
         //Items in specified room
         room4.allocateItem("coins");
-        room5.allocateItem("gauntlet");
+
 
 
         //Food in specified room
@@ -71,14 +71,15 @@ public class Map {
 
         //Melee weapons
         room2.allocateMeleeWeapons("sword", 15);
+        room5.allocateMeleeWeapons("gauntlet", 20000);
 
         //Enemies in the map
         // Enemy 1
-        MeleeWeapon samuraiWeapon = new MeleeWeapon("katana", 25);
-        room6.allocateEnemy("Samurai Jack", 100, samuraiWeapon);
+        MeleeWeapon samuraiWeapon = new MeleeWeapon("katana", 20);
+        room6.allocateEnemy("Samurai Jack", 80, samuraiWeapon);
 
         //Enemy 2
-        MeleeWeapon netenyahuWeapon = new MeleeWeapon("zionism", 20);
+        MeleeWeapon netenyahuWeapon = new MeleeWeapon("zionism", 25);
         room8.allocateEnemy("Benjamin Netenhayu", 100, netenyahuWeapon);
 
 

@@ -57,5 +57,9 @@ public class Adventure {
     public void unEquipWeapon() {
         player.unEquip();
     }
+
+    public boolean powerOfInfinity(){
+        return player.equippedGauntlet();
+    }
 }
 
