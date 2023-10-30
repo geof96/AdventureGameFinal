@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Adventure {
-    private Map map;
-    private Player player;
+    private final Map map;
+    private final Player player;
 
     //Calling the method in adventure.
     public Adventure() {
@@ -17,17 +17,16 @@ public class Adventure {
         player.walk(direction);
     }
 
-public String observe(){
+    public String observeSurroundings() {
         return player.surroundings();
-}
+    }
 
-    public void takeAllocatedItem(String itemName) {
-        player.takeItem(itemName);
+    public boolean takeAllocatedItem(String itemName) {
+        return player.takeItem(itemName);
     }
 
     public ArrayList<Item> seeInventory() {
         System.out.println("These are your items: ");
-        player.getInventory();
         return player.getInventory();
     }
 
@@ -56,7 +55,7 @@ public String observe(){
         player.unEquip();
     }
 
-    public boolean powerOfInfinity(){
+    public boolean powerOfInfinity() {
         return player.equippedGauntlet();
     }
 }

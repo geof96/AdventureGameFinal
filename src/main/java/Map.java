@@ -65,6 +65,8 @@ public class Map {
         room1.allocateFood("peanuts", 15);
         room9.allocateFood("wagyu", 35);
 
+
+
         //Ranged weapons
         room8.allocateRangedWeapons("sniper", 20, 10);
 

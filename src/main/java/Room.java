@@ -5,10 +5,10 @@ public class Room {
     private Room south;
     private Room east;
     private Room west;
-    private String name;
-    private String description;
-    private ArrayList<Item> items = new ArrayList<>();
-    private ArrayList<Enemy> enemyList = new ArrayList<>();
+    private final String name;
+    private final String description;
+    private final ArrayList<Item> items = new ArrayList<>();
+    private final ArrayList<Enemy> enemyList = new ArrayList<>();
 
 
     public Room(String name, String description) {
@@ -55,10 +55,6 @@ public class Room {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {

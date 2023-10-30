@@ -1,9 +1,9 @@
 
 public class Enemy {
 
-    private String enemyName;
+    private final String enemyName;
     private int enemyHealth;
-    private Weapon enemyWeapon;
+    private final Weapon enemyWeapon;
 
     public void setEnemyHealth(int enemyHealth) {
         this.enemyHealth = enemyHealth;

@@ -1,6 +1,6 @@
 public abstract class Weapon extends Item {
 
-    private int weaponDamage;
+    private final int weaponDamage;
 
     public Weapon(String weaponName, int weaponDamage) {
         super(weaponName);

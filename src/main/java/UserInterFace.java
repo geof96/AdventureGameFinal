@@ -21,7 +21,7 @@ public class UserInterFace {
             if (commands.length == 1) {
                 switch (commands[0]) {
                     case "look", "l", "L" -> {
-                        System.out.println(adventure.observe());
+                        System.out.println(adventure.observeSurroundings());
                         System.out.println(waitCommand);
                     }
                     case "inventory", "INVENTORY", "i", "I", "inven", "INVEN" -> {
@@ -29,6 +29,7 @@ public class UserInterFace {
                         System.out.println(waitCommand);
                     }
                     case "health" -> {
+                        System.out.println("Health points left: ");
                         System.out.println(adventure.healthPoints());
                         System.out.println(waitCommand);
                     }
@@ -58,8 +59,14 @@ public class UserInterFace {
                     }
                     case "take", "Take", "t", "T" -> {
                         String itemName = commands[1];
-                        adventure.takeAllocatedItem(itemName);
-                        System.out.println("You've added " + itemName + " to your inventory.");
+                        boolean found = adventure.takeAllocatedItem(itemName);
+                        if(!found) {
+                            System.out.println("Can't find " + commands[1]);
+                        }
+                        else {
+                            System.out.println("You've added " + itemName + " to your inventory.");
+                        }
+
                         System.out.println(waitCommand);
                     }
                     case "d", "D", "drop", "Drop" -> {
@@ -87,6 +94,11 @@ public class UserInterFace {
             if (adventure.healthPoints() <= 0) {
                 isRunning = false;
                 System.out.println("You have been defeated. Start the game again to find the Infinity Gauntlet");
+            }
+
+            // Player health warning
+            if (adventure.healthPoints() <= 35){
+                System.out.println("Your health is low, eat or drink something to heal.");
             }
 
             //Player wins
